@@ -1,0 +1,164 @@
+{%  load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Event</title>
+    <style>
+         body {
+        background: url('https://images.unsplash.com/photo-1532210317995-cc56d90177d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80') center;
+        background-size: cover;
+        min-height: 600px;
+        font-family: 'Helvetica Neue', sans-serif;
+      }
+          nav {
+        text-align: center;
+      }
+      .menu {
+        display: inline-block;
+      }
+      .menu>li {
+        float: left;
+        color: #e298e1;
+        width: 250px;
+        height: 40px;
+        line-height: 40px;
+        background: rgba(0, 0, 0, 0.7);
+        cursor: pointer;
+        font-size: 17px;
+      }
+      .sub-menu {
+        transform: scale(0);
+        transform-origin: top center;
+        transition: all 300ms ease-in-out;
+      }
+      .sub-menu li {
+        font-size: 14px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px 0;
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transform: scale(0);
+        transform-origin: top center;
+        transition: all 300ms ease-in-out;
+      }
+      .sub-menu li:last-child {
+        border-bottom: 0;
+      }
+      .sub-menu li:hover {
+        background: black;
+      }
+      .menu>li:hover .sub-menu li {
+        transform: scale(1);
+      }
+      .menu>li:hover .sub-menu {
+        transform: scale(1);
+      }
+      table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: lavender;
+}
+ tr:nth-child(odd) {
+  background-color: lavenderblush;
+}
+    </style>
+  </head>
+  <body>
+    <nav>
+      <ul class="menu" style="font-size: 20px;font-weight: bold">
+        <li>Donation
+        <ul class="sub-menu">
+            <li><a href="/donation/ngo/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px"> Donation</a></li>
+            <li><a href="/donation/add/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Add Donation</a></li>
+          </ul>
+        </li>
+        <li><a href="/ngo/table/" style="text-decoration: none; color:#e298e1 ; font-weight: bold; font-size: 20px">NGO Home</a></li>
+        <li >
+          <a href="/logout/" style="text-decoration: none; color:#e298e1 ; font-weight: bold; font-size: 20px">Logout</a>
+{#          <ul class="sub-menu">#}
+{#            <li><a href="/ngo/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">NGO login</a></li>#}
+{#            <li><a href="/volunteer/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Volunteer Login</a></li>#}
+{#            <li><a href="/donator/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Donor Login</a></li>#}
+{#            <li><a href="/staff/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Staf Login</a></li>#}
+{#          </ul>#}
+        </li>
+        <li>
+          Event
+          <ul class="sub-menu">
+            <li><a href="/event/ngo/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Event</a></li>
+            <li><a href="/event/add/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Add Event</a></li>
+          </ul>
+        </li>
+        <li>
+          Project
+          <ul class="sub-menu">
+            <li><a href="/project/ngo/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px"> Project</a></li>
+            <li><a style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Add Project</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+    </style>
+  <!-- Custom fonts for this template-->
+  <link href="{% static 'vendor' %}/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+
+  <!-- Custom styles for this template-->
+  <link href="{% static 'css' %}/sb-admin-2.min.css" rel="stylesheet">
+
+</head>
+
+</body  >
+<h2>Event Page</h2>
+<table style="color: black">
+  <tr>
+    <th>Title</th>
+    <th>Event For</th>
+
+    <th>Description</th>
+    <th>Start date</th>
+    <th>Time</th>
+    <th>Location</th>
+    <th>Associated volunteer</th>
+    <th>Edit</th>
+    <th>Delete</th>
+  </tr>
+    {%  for x in event %}
+        {% if x.event_for == user %}
+  <tr >
+    <td>{{ x.title }}</td>
+    <td><b>{{ x.event_for }}</b></td>
+
+    <td>{{ x.description }}</td>
+    <td>{{ x.start_date }}</td>
+    <td>{{ x.time }}</td>
+    <td>{{ x.location }}</td>
+    <td>{{ x.associated_volunteer }}</td>
+    <td><a  href="/event/{{ x.id }}/edit/" style="text-decoration: none; color: black; font-weight: bold; font-size: 20px">Edit </a> </td>
+    <td> <a href="/event/{{ x.id }}/delete/">  <img title="Delete {{ x.name }}" src="{% static 'red cross.png' %}" style="width: 25px"></a> </td>
+  </tr>
+        {% endif %}
+   {%  endfor %}
+</table>
+
+
+</html>

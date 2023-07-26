@@ -1,0 +1,540 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <meta charset="UTF-8">
+    <title>Staff table</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<style>
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+  overflow: hidden;
+  {#background-color: blueviolet;#}
+}
+
+.navbar a {
+  float: left;
+  {#font-size: 14px;#}
+  color: black;
+  text-align: center;
+  {#padding: 14px 16px;#}
+  text-decoration: none;
+}
+
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+.dropdown .dropbtn {
+  {#font-size: 16px;#}
+  border: none;
+  outline: none;
+  color: black;
+  {#padding: 14px 16px;#}
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
+}
+
+.navbar a:hover, .dropdown:hover .dropbtn {
+  {#background-color: red;#}
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  {#min-width: 160px;#}
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  float: none;
+  color: black;
+  {#padding: 12px 16px;#}
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+@import url('https://fonts.googleapis.com/css2?family=Sriracha&display=swap');
+
+body {
+  margin: 0;
+  box-sizing: border-box;
+}
+/* CSS for header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f5f5f5;
+}
+
+.header .logo {
+  font-size: 25px;
+  font-family: 'Sriracha', cursive;
+  color: #000;
+  text-decoration: none;
+  margin-left: 30px;
+}
+
+.nav-items {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #f5f5f5;
+  margin-right: 20px;
+}
+
+.nav-items a {
+  text-decoration: none;
+  color: #000;
+  padding: 35px 20px;
+}
+/* CSS for main section */
+.intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 520px;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.5) 100%), url({% static 'ngo logo.png' %});
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.intro h1 {
+  font-family: sans-serif;
+  font-size: 60px;
+  color: #fff;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.intro p {
+  font-size: 20px;
+  color: #d1d1d1;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.intro button {
+  background-color: #5edaf0;
+  color: #000;
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.4)
+}
+
+.achievements {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 80px;
+}
+
+.achievements .work {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.achievements .work i {
+  width: fit-content;
+  font-size: 50px;
+  color: #333333;
+  border-radius: 50%;
+  border: 2px solid #333333;
+  padding: 12px;
+}
+
+.achievements .work .work-heading {
+  font-size: 20px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.achievements .work .work-text {
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 0;
+
+}
+
+.about-me {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 80px;
+  border-top: 2px solid #eeeeee;
+}
+
+.about-me img {
+  width: 500px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+}
+
+.about-me-text h2 {
+  font-size: 30px;
+  color: #333333;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.about-me-text p {
+  font-size: 15px;
+  color: #585858;
+  margin: 10px 0;
+}
+/* CSS for footer */
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #302f49;
+  padding: 40px 80px;
+}
+
+.footer .copy {
+  color: #fff;
+}
+
+.bottom-links {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 40px 0;
+}
+
+.bottom-links .links {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 40px;
+}
+
+.bottom-links .links span {
+  font-size: 20px;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 10px 0;
+}
+
+.bottom-links .links a {
+  text-decoration: none;
+  color: #a1a1a1;
+  padding: 10px 20px;
+}
+# new css
+<style>
+      * {
+        margin: 0;
+        padding: 0;
+        list-style-type: none;
+        box-sizing: border-box;
+      }
+      body {
+        background: url('https://images.unsplash.com/photo-1532210317995-cc56d90177d9?ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80') center;
+        background-size: cover;
+        min-height: 600px;
+        font-family: 'Helvetica Neue', sans-serif;
+      }
+      nav {
+        text-align: center;
+      }
+      .menu {
+        display: inline-flex;
+      }
+      .menu>li {
+        float: left;
+        color: black;
+        width: 250px;
+        height: 40px;
+        line-height: 40px;
+        background:gray;
+        cursor: pointer;
+        font-size: 17px;
+      }
+      .sub-menu {
+        transform: scale(0);
+        transform-origin: top center;
+        transition: all 300ms ease-in-out;
+      }
+      .sub-menu li {
+        font-size: 14px;
+        background: rgba(0, 0, 0, 0.8);
+        padding: 8px 0;
+        color: white;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        transform: scale(0);
+        transform-origin: top center;
+        transition: all 300ms ease-in-out;
+      }
+      .sub-menu li:last-child {
+        border-bottom: 0;
+      }
+      .sub-menu li:hover {
+        background: black;
+      }
+      .menu>li:hover .sub-menu li {
+        transform: scale(1);
+      }
+      .menu>li:hover .sub-menu {
+        transform: scale(1);
+      }
+      <!-- new 3rd css -->
+    @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+
+</style>
+<body >
+ <nav>
+      <ul class="menu" style="font-size: 20px;font-weight: bold;background-color: gray">
+        <li>
+          Donation
+            <ul class="sub-menu">
+            <li><a href="/donation/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px"> Donation</a></li>
+            <li><a href="/donation/add/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Add Donation</a></li>
+          </ul>
+        </li>
+        <li><a href="/logout/" style="text-decoration: none; color: black; font-weight: bold; font-size: 20px">logout</a></li>
+{#        <li >#}
+{#          <span style="color:black;font-weight: bold; font-size: 20px">Login</span>#}
+{#          <ul class="sub-menu">#}
+{#            <li><a href="/ngo/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">NGO login</a></li>#}
+{#            <li><a href="/volunteer/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Volunteer Login</a></li>#}
+{#            <li><a href="/donator/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Donor Login</a></li>#}
+{#            <li><a href="/staff/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Staff Login</a></li>#}
+{#          </ul>#}
+{#        </li>#}
+        <li style="color:black;font-weight: bold; font-size: 20px">
+          Event
+          <ul class="sub-menu">
+            <li><a href="/event/add/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Create an Event </a></li>
+            <li><a href="/event/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">View all Events</a></li>
+          </ul>
+        </li>
+        <li style="color:black;font-weight: bold; font-size: 20px">
+          Projects
+          <ul class="sub-menu" >
+            <li><a href="/project/add/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">Create a Project</a></li>
+            <li><a href="/project/" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">view all Projects</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+
+
+{#<div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none ;background-color: gray ;right:0;" id="rightMenu">#}
+{#  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>#}
+{#  <a href="#" class="w3-bar-item w3-button">{{  user }}</a>#}
+{#  <a href="/ngo/{{ user.id }}/edit" class="w3-bar-item w3-button">Edit Profile</a>#}
+{#  <a href="/logout/" class="w3-bar-item w3-button">logout</a>#}
+{#</div>#}
+
+<div class="w3-teal">
+
+
+
+
+  </div>
+</div>
+<main>
+<nav>
+
+      <ul class="menu" style="font-size: 20px;font-weight: bold; background-color: gray; width: 2000px">
+        <li>
+           Projects
+            <ul class="sub-menu">
+                {%  for x in project %}
+            <li><a href="#" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px"> {{ x.title }}</a></li>
+                {%  endfor %}
+          </ul>
+        </li>
+        <li >
+          <span style="color:black;font-weight: bold; font-size: 20px">NGO</span>
+          <ul class="sub-menu">
+              {%  for x in ngo %}
+            <li><a href="#" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">{{ x.username }}</a></li>
+                {%  endfor %}
+          </ul>
+        </li>
+        <li style="color:black;font-weight: bold; font-size: 20px">
+          Event
+          <ul class="sub-menu">
+              {%  for x in event %}
+            <li><a href="#" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">{{ x.title }} </a></li>
+              {%  endfor %}
+          </ul>
+        </li>
+        <li style="color:black;font-weight: bold; font-size: 20px">
+          Donations
+          <ul class="sub-menu" >
+              {%  for x in donation %}
+            <li><a href="#" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">{{ x.donor }}</a></li>
+              {%  endfor %}
+          </ul>
+        </li>
+          <li style="color:black;font-weight: bold; font-size: 20px">
+          Volunteer
+          <ul class="sub-menu" >
+              {%  for x in volunteer %}
+            <li><a href="#" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">{{ x.user }}</a></li>
+              {%  endfor %}
+          </ul>
+        </li>
+          <li style="color:black;font-weight: bold; font-size: 20px">
+          Donor
+          <ul class="sub-menu" >
+              {%  for x in donor %}
+            <li><a href="#" style="text-decoration: none; color: white; font-weight: bold; font-size: 20px">{{ x.user }}</a></li>
+              {%  endfor %}
+          </ul>
+        </li>
+ <li style="color:black;font-weight: bold; font-size: 20px">
+          <a >{{ user }}
+          <img  style="border-radius: 25px" src="https://images.unsplash.com/source-404?fit=crop&fm=jpg&h=35&q=60&w=35"></a>
+          <ul class="sub-menu" >
+            <li>
+                <a href="/ngo/{{ user.id }}/edit" class="w3-bar-item w3-button">Edit Profile</a></li><li>
+              <a href="/logout/" class="w3-bar-item w3-button">logout</a></li>
+          </ul>
+{#          <li>#}
+{#            <button class="w2-button w1-teal w1-large w1-right  " style="height: 40px; background-color: thistle;margin-left: 33px" onclick="openRightMenu()">&#9776;</button>#}
+{#    <div class="w3-sidebar w3-bar-block w3-card w3-animate-right" style="display:none ;background-color: gray ;right:0;" id="rightMenu">#}
+{#  <button onclick="closeRightMenu()" class="w3-bar-item w3-button w3-large">Close &times;</button>#}
+{#  <a href="#" class="w3-bar-item w3-button">{{  user }}</a>#}
+{#  <a href="/ngo/{{ user.id }}/edit" class="w3-bar-item w3-button">Edit Profile</a>#}
+{#  <a href="/logout/" class="w3-bar-item w3-button">logout</a>#}
+{#</div>#}
+{#  <div class="w3-container" style="background-color: darkgray">#}
+{#  </div></li>#}
+{#      </ul>#}
+    </nav>
+  <div class="intro">
+    <h1>Staff  Page</h1>
+
+  </div>
+  <div class="achievements">
+
+  </div>
+    <div class="achievements">
+    <div class="work">
+                  <i class="fas fa-atom"><a href="/project/" style="text-decoration: none; color: black">Project's</a></i>
+
+        {%  for x in project %}
+      <p class="work-heading">{{ x.title }}</p>
+        {%  endfor %}
+    </div>
+    <div class="work">
+                        <i class="fas fa-atom"><a href="/event/" style="text-decoration: none; color: black">Event's</a></i>
+
+        {%  for x in event %}
+      <p class="work-heading">{{ x.title }}</p>
+        {%  endfor %}
+    </div>
+    <div class="work">
+                        <i class="fas fa-atom"><a href="/donation/" style="text-decoration: none; color: black">Donation's</a></i>
+
+        {%  for x in donation %}
+      <p class="work-heading">{{ x.donor }}</p>
+        {%  endfor %}
+    </div>
+    </div>
+
+<script>
+function openLeftMenu() {
+  document.getElementById("leftMenu").style.display = "block";
+}
+
+function closeLeftMenu() {
+  document.getElementById("leftMenu").style.display = "none";
+}
+
+function openRightMenu() {
+  document.getElementById("rightMenu").style.display = "block";
+}
+
+function closeRightMenu() {
+  document.getElementById("rightMenu").style.display = "none";
+}
+</script>
+<script>
+function myAccFunc() {
+  var x = document.getElementById("demoAcc");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+
+function myDropFunc() {
+  var x = document.getElementById("demoDrop");
+  if (x.className.indexOf("w3-show") == -1) {
+    x.className += " w3-show";
+    x.previousElementSibling.className += " w3-green";
+  } else {
+    x.className = x.className.replace(" w3-show", "");
+    x.previousElementSibling.className =
+    x.previousElementSibling.className.replace(" w3-green", "");
+  }
+}
+</script>
+
+
+</main>
+
+<footer class="footer">
+  <div class="copy">&copy; 2022 Developer</div>
+  <div class="bottom-links">
+    <div class="links">
+      <span>More Info</span>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Contact</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>
