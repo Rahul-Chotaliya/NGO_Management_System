@@ -25,6 +25,17 @@ ________________________________________
   6.	All data is securely stored and accessible based on role permissions
 ________________________________________
 📸 Screenshots :
+<img width="1898" height="895" alt="image" src="https://github.com/user-attachments/assets/aa5aa4fc-b140-48f8-a4c8-15a20c70b949" />
+<img width="1894" height="904" alt="image" src="https://github.com/user-attachments/assets/0ee1a21c-7c68-4f33-b5f9-22d23fd19b26" />
+<img width="1917" height="857" alt="image" src="https://github.com/user-attachments/assets/efe683e2-dbb9-42b6-b2b8-0adcaa0f3bf0" />
+<img width="1908" height="669" alt="image" src="https://github.com/user-attachments/assets/4c2c3551-01df-4db3-96bf-cacafc98fc7f" />
+<img width="1915" height="673" alt="image" src="https://github.com/user-attachments/assets/f6724e99-6760-4836-a417-4b640a7c18af" />
+
+
+
+
+
+
      ________________________________________
 🛠️ Tech Stack
   Layer	Technology
